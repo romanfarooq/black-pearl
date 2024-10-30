@@ -1,20 +1,17 @@
-import { useState } from "react";
+import useLocalizeDocumentAttributes from "./i18n/useLocalizeDocumentAttributes";
+import LocaleSwitcher from "./i18n/locale-switcher";
+import { useTranslation } from "react-i18next";
 
 function App() {
-  const [count, setCount] = useState(0);
+  useLocalizeDocumentAttributes();
+  const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col justify-center pl-10 h-screen">
+    <div className="flex flex-col justify-center ps-10 h-screen">
       <div>
-        <h1 className="text-3xl font-bold">Counter</h1>
-        <h2 className="text-2xl">Count: {count}</h2>
-        <button
-          className="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
-          onClick={() => setCount(count + 1)}
-        >
-          Increment
-        </button>
+        <LocaleSwitcher />
       </div>
+      <h1 className="text-4xl font-bold">{t("hello_world")}</h1>
     </div>
   );
 }
