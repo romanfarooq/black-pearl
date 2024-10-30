@@ -7,7 +7,7 @@ function App() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col justify-center ps-10 h-screen">
+    <div className="container mx-auto flex h-screen flex-col justify-center px-4">
       <div>
         <LocaleSwitcher />
       </div>
