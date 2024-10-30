@@ -17,9 +17,6 @@ i18n
     fallbackLng: "en",
     supportedLngs: Object.keys(supportedLngs),
     debug: true,
-    interpolation: {
-      escapeValue: false,
-    },
   });
 
 i18n.services.formatter?.add("number", number);
