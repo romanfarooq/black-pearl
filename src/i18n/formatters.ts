@@ -12,7 +12,7 @@ function qualifiedLngFor(lng: string): string {
 export function number(
   value: number,
   lng: string | undefined,
-  options?: Intl.NumberFormatOptions
+  options?: Intl.NumberFormatOptions,
 ): string {
   return new Intl.NumberFormat(qualifiedLngFor(lng!), options).format(value);
 }
@@ -20,7 +20,7 @@ export function number(
 export function currency(
   value: number,
   lng: string | undefined,
-  options?: Intl.NumberFormatOptions
+  options?: Intl.NumberFormatOptions,
 ): string {
   return number(value, lng, {
     style: "currency",
@@ -31,7 +31,7 @@ export function currency(
 export function datetime(
   value: Date | number,
   lng: string | undefined,
-  options?: Intl.DateTimeFormatOptions
+  options?: Intl.DateTimeFormatOptions,
 ): string {
   return new Intl.DateTimeFormat(qualifiedLngFor(lng!), options).format(value);
 }

@@ -2,7 +2,7 @@ import useLocalizeDocumentAttributes from "./i18n/useLocalizeDocumentAttributes"
 import LocaleSwitcher from "./i18n/locale-switcher";
 import { useTranslation } from "react-i18next";
 
-function App() {
+export default function App() {
   useLocalizeDocumentAttributes();
   const { t } = useTranslation();
 
@@ -15,5 +15,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
