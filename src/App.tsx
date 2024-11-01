@@ -1,17 +1,48 @@
-import useLocalizeDocumentAttributes from "./i18n/useLocalizeDocumentAttributes";
-import LocaleSwitcher from "./i18n/locale-switcher";
-import { useTranslation } from "react-i18next";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
+import AppLayout from "@/layout/app-layout";
+import Home from "@/pages/home";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        index: true,
+        element: <Navigate to="home" replace={true} />,
+      },
+      {
+        path: "home",
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <Home />,
+      },
+      {
+        path: "services",
+        element: <Home />,
+      },
+      {
+        path: "projects",
+        element: <Home />,
+      },
+      {
+        path: "blog",
+        element: <Home />,
+      },
+      {
+        path: "contact",
+        element: <Home />,
+      },
+    ],
+  },
+]);
 
 export default function App() {
-  useLocalizeDocumentAttributes();
-  const { t } = useTranslation();
-
-  return (
-    <div className="container mx-auto flex h-screen flex-col justify-center px-4">
-      <div>
-        <LocaleSwitcher />
-      </div>
-      <h1 className="text-4xl font-bold">{t("hello_world")}</h1>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
