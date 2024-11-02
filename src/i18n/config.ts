@@ -5,8 +5,8 @@ import { initReactI18next } from "react-i18next";
 import { number, currency, datetime } from "@/i18n/formatters";
 
 export const supportedLngs = {
-  en: "English",
-  ar: "Arabic (العربية)",
+  en: "EN",
+  ar: "Ar",
 };
 
 i18n
