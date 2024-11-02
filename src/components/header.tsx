@@ -70,11 +70,11 @@ export default function Header() {
   ];
 
   return (
-    <nav className="fixed z-40 flex w-full flex-col justify-between border-b border-blue-300 bg-[#2a2d43]">
+    <nav className="fixed z-40 flex w-full flex-col justify-between border-b border-blue-300 bg-[#1c1e2d]">
       <div className="px-4 py-2 lg:container lg:mx-auto">
         <div
           className={cn(
-            "hidden w-full border-b border-[#494e75] bg-[#2a2d43] transition-all duration-500 ease-in-out md:block",
+            "hidden w-full border-b border-[#494e75] bg-[#1c1e2d] transition-all duration-500 ease-in-out md:block",
             isScrolled
               ? "max-h-0 py-0 opacity-0"
               : "max-h-screen py-3 opacity-100",
@@ -126,7 +126,7 @@ export default function Header() {
                       <NavigationMenuTrigger className="h-full bg-inherit p-0 font-normal text-white hover:bg-inherit hover:text-blue-500 focus:bg-inherit focus:text-white data-[active]:bg-inherit data-[state=open]:bg-inherit md:text-xs lg:text-lg">
                         <span>{item.name}</span>
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="bg-[#2a2d43] p-4">
+                      <NavigationMenuContent className="bg-[#1c1e2d] p-4">
                         <ul
                           className={cn(
                             "flex flex-col space-y-2",
@@ -183,17 +183,18 @@ export default function Header() {
 
             <SheetContent
               side={i18n.dir() === "ltr" ? "left" : "right"}
-              className="max-h-screen w-screen max-w-[70%] overflow-y-auto border-none bg-[#0f1729] p-0 text-white sm:max-w-[40%]"
+              className="max-h-screen w-screen max-w-[80%] overflow-y-auto border-none bg-[#030F27] p-0 text-white sm:max-w-[40%]"
               aria-describedby={undefined}
             >
               <SheetHeader>
-                <div className="flex h-28 items-center justify-center">
-                  <div className="w-52">
+                <div className="flex h-32 items-center justify-center">
+                  <div className="w-56">
                     <img src="src/assets/images/logo.webp" alt="Logo" />
                   </div>
                 </div>
               </SheetHeader>
-              <ul className="flex flex-col py-2">
+
+              <ul className="flex flex-col">
                 {navItems.map((item) =>
                   item.hasChildren ? (
                     <Accordion type="single" collapsible key={item.name}>
@@ -209,7 +210,7 @@ export default function Header() {
                             {item.children.map((subItem) => (
                               <li
                                 key={subItem}
-                                className="flex items-center justify-between border-t border-[#1e293b] px-8 py-3"
+                                className="border-t border-[#1e293b] px-8 py-3"
                               >
                                 <Link to="/">{subItem}</Link>
                               </li>
@@ -221,7 +222,7 @@ export default function Header() {
                   ) : (
                     <li
                       key={item.name}
-                      className="flex items-center justify-between border-t border-[#1e293b] px-8 py-3"
+                      className="border-t border-[#1e293b] px-8 py-3"
                     >
                       <SheetTitle>
                         <Link
@@ -235,6 +236,10 @@ export default function Header() {
                   ),
                 )}
               </ul>
+
+              <div className="px-8 py-3 flex h-14 border-t border-[#1e293b]">
+                <LocaleSwitcher />
+              </div>
             </SheetContent>
           </Sheet>
         </div>
