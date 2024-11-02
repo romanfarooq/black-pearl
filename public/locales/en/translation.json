@@ -1,4 +1,25 @@
 {
   "app_title": "Black Pearls Contracting Est",
-  "hello_world": "Hello, World!"
+  "header": {
+    "navItems": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "services": "Services",
+      "children": {
+        "hvacSolutions": "HVAC Solutions",
+        "electricalServices": "Electrical Services",
+        "plumbingExpertise": "Plumbing Expertise",
+        "fireSafety": "Fire Safety",
+        "safetySecurity": "Safety and Security Measures",
+        "maintenanceContracts": "Maintenance Contracts"
+      },
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contactInfo": {
+      "address": "6740, Mishrifah dist., Jeddah"
+    },
+    "contactButton": "CONTACT NOW"
+  }
 }

@@ -1,4 +1,25 @@
 {
   "app_title": "مؤسسة اللؤلؤة السوداء للمقاولات",
-  "hello_world": "مرحباً بالعالم!"
+  "header": {
+    "navItems": {
+      "home": "الرئيسية",
+      "about": "من نحن",
+      "projects": "المشاريع",
+      "services": "الخدمات",
+      "children": {
+        "hvacSolutions": "حلول HVAC",
+        "electricalServices": "الخدمات الكهربائية",
+        "plumbingExpertise": "خبرة السباكة",
+        "fireSafety": "السلامة من الحرائق",
+        "safetySecurity": "تدابير السلامة والأمان",
+        "maintenanceContracts": "عقود الصيانة"
+      },
+      "blog": "مدونة",
+      "contact": "اتصل بنا"
+    },
+    "contactInfo": {
+      "address": "6740، حي مشرفة، جدة"
+    },
+    "contactButton": "اتصل الآن"
+  }
 }

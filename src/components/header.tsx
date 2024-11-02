@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
@@ -34,10 +34,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import LocaleSwitcher from "@/i18n/locale-switcher";
 
-const Navigation = () => {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,29 +49,29 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "/home" },
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
+    { name: t("header.navItems.home"), href: "/home" },
+    { name: t("header.navItems.about"), href: "/about" },
+    { name: t("header.navItems.projects"), href: "/projects" },
     {
-      name: "Services",
+      name: t("header.navItems.services"),
       href: "/services",
       hasChildren: true,
       children: [
-        "HVAC Solutions",
-        "Electrical Services",
-        "Plumbing Expertise",
-        "Fire Safety",
-        "Safety and Security Measures",
-        "Maintenance Contracts",
+        t("header.navItems.children.hvacSolutions"),
+        t("header.navItems.children.electricalServices"),
+        t("header.navItems.children.plumbingExpertise"),
+        t("header.navItems.children.fireSafety"),
+        t("header.navItems.children.safetySecurity"),
+        t("header.navItems.children.maintenanceContracts"),
       ],
     },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
+    { name: t("header.navItems.blog"), href: "/blog" },
+    { name: t("header.navItems.contact"), href: "/contact" },
   ];
 
   return (
     <nav className="fixed z-40 flex w-full flex-col justify-between border-b border-blue-300 bg-[#2a2d43]">
-      <div className="container mx-auto mt-auto px-4 py-2">
+      <div className="px-4 py-2 lg:container lg:mx-auto">
         <div
           className={cn(
             "hidden w-full border-b border-[#494e75] bg-[#2a2d43] transition-all duration-500 ease-in-out md:block",
@@ -81,32 +81,30 @@ const Navigation = () => {
           )}
         >
           <div className="flex items-center justify-between text-white md:text-xs lg:text-sm">
-            <div className="flex items-center">
-              <span className="flex items-center">
-                <FaPhoneAlt className="me-2 text-blue-500" />
-                <span>(+966) 50 711 6423</span>
+            <div className="flex items-center text-nowrap md:gap-4 lg:gap-8">
+              <span className="flex items-center gap-2">
+                <FaPhoneAlt className="text-blue-500" />
+                <span dir="ltr">(+966) 50 711 6423</span>
               </span>
-              <span className="flex items-center md:ms-4 lg:ms-8">
-                <FaEnvelope className="me-2 text-blue-500" />
-                <span>muhammmadmusaffa@theblackpearlsa.com</span>
+              <span className="flex items-center gap-2">
+                <FaEnvelope className="text-blue-500" />
+                <span dir="ltr">muhammmadmusaffa@theblackpearlsa.com</span>
               </span>
-              <span className="flex items-center md:ms-4 lg:ms-8">
-                <FaMapMarkerAlt className="me-2 text-blue-500" />
-                <span>6740, Mishrifah dist., Jeddah</span>
+              <span className="flex items-center gap-2">
+                <FaMapMarkerAlt className="text-blue-500" />
+                <span>{t("header.contactInfo.address")}</span>
               </span>
-              <span className="md:ms-4 lg:ms-8">
-                <LocaleSwitcher />
-              </span>
+              <LocaleSwitcher />
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-center md:gap-1 lg:gap-4">
               <a href="#" className="hover:text-blue-500">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="hover:text-blue-500 ms-4">
+              <a href="#" className="hover:text-blue-500">
                 <FaFacebook size={20} />
               </a>
-              <a href="#" className="hover:text-blue-500 ms-4">
+              <a href="#" className="hover:text-blue-500">
                 <FaLinkedin size={20} />
               </a>
             </div>
@@ -129,7 +127,12 @@ const Navigation = () => {
                         <span>{item.name}</span>
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-[#2a2d43] p-4">
-                        <ul className="flex flex-col space-y-2">
+                        <ul
+                          className={cn(
+                            "flex flex-col space-y-2",
+                            i18n.dir() === "ltr" ? "text-left" : "text-right",
+                          )}
+                        >
                           {item.children.map((subItem) => (
                             <li key={subItem}>
                               <NavigationMenuLink asChild>
@@ -161,7 +164,7 @@ const Navigation = () => {
 
           <div className="flex w-40 justify-end lg:w-52">
             <button className="rounded bg-blue-500 px-6 py-2 text-sm text-white hover:bg-blue-600 lg:text-base">
-              CONTACT NOW
+              {t("header.contactButton")}
             </button>
           </div>
         </div>
@@ -238,6 +241,4 @@ const Navigation = () => {
       </div>
     </nav>
   );
-};
-
-export default Navigation;
+}
