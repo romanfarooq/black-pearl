@@ -102,14 +102,15 @@ export default function HeroSection() {
                 >
                   {content.subtitle}
                 </motion.p>
-                <motion.button
+                <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  className="border border-white px-6 py-2 text-white hover:bg-white hover:text-black"
                 >
-                  {t("hero.0.get_started")}
-                </motion.button>
+                  <button className="border border-white px-6 py-2 text-white transition duration-300 hover:bg-white hover:text-black">
+                    {t("hero.0.get_started")}
+                  </button>
+                </motion.div>
               </div>
             </div>
           </div>
