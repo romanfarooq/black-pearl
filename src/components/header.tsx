@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -73,7 +74,15 @@ export default function Header() {
 
   return (
     <nav className="fixed z-50 flex w-full flex-col justify-between border-b border-[#494e75] bg-[#2a2d43]">
-      <div className="px-4 lg:container lg:mx-auto">
+      <motion.div
+        initial="initial"
+        animate="animate"
+        variants={{
+          initial: { opacity: 0, y: -20 },
+          animate: { opacity: 1, y: 0 },
+        }}
+        className="px-4 lg:container lg:mx-auto"
+      >
         <div
           className={cn(
             "hidden w-full border-b border-[#494e75] bg-[#2a2d43] transition-all duration-500 ease-in-out md:block",
@@ -245,7 +254,7 @@ export default function Header() {
             </SheetContent>
           </Sheet>
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 }

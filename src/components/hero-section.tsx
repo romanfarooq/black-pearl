@@ -68,7 +68,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative h-[70vh] w-full overflow-hidden pt-16 lg:h-screen">
+    <div className="relative h-[70vh] w-full overflow-hidden pt-10 md:pt-16 lg:h-screen">
       <div
         className="flex h-full items-stretch transition-transform duration-500 ease-out"
         style={{
