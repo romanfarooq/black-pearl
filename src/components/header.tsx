@@ -39,6 +39,8 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { i18n, t } = useTranslation();
 
+  const isRTL = i18n.dir() === "rtl";
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -70,41 +72,41 @@ export default function Header() {
   ];
 
   return (
-    <nav className="fixed z-50 flex w-full flex-col justify-between border-b border-blue-300 bg-[#2a2d43]">
-      <div className="px-4 py-2 lg:container lg:mx-auto">
+    <nav className="fixed z-50 flex w-full flex-col justify-between border-b border-[#494e75] bg-[#2a2d43]">
+      <div className="px-4 lg:container lg:mx-auto">
         <div
           className={cn(
             "hidden w-full border-b border-[#494e75] bg-[#2a2d43] transition-all duration-500 ease-in-out md:block",
             isScrolled
               ? "max-h-0 py-0 opacity-0"
-              : "max-h-screen py-3 opacity-100",
+              : "max-h-screen py-2 opacity-100",
           )}
         >
           <div className="flex items-center justify-between text-white md:text-xs lg:text-sm">
             <div className="flex items-center text-nowrap md:gap-4 lg:gap-8">
               <span className="flex items-center gap-2">
-                <FaPhoneAlt className="text-blue-500" />
+                <FaPhoneAlt className="text-orange-500" />
                 <span dir="ltr">(+966) 50 711 6423</span>
               </span>
               <span className="flex items-center gap-2">
-                <FaEnvelope className="text-blue-500" />
+                <FaEnvelope className="text-orange-500" />
                 <span dir="ltr">muhammmadmusaffa@theblackpearlsa.com</span>
               </span>
               <span className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-blue-500" />
+                <FaMapMarkerAlt className="text-orange-500" />
                 <span>{t("header.contactInfo.address")}</span>
               </span>
               <LocaleSwitcher />
             </div>
 
             <div className="flex items-center md:gap-1 lg:gap-4">
-              <a href="#" className="hover:text-blue-500">
+              <a href="#" className="hover:text-orange-500">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="hover:text-blue-500">
+              <a href="#" className="hover:text-orange-500">
                 <FaFacebook size={20} />
               </a>
-              <a href="#" className="hover:text-blue-500">
+              <a href="#" className="hover:text-orange-500">
                 <FaLinkedin size={20} />
               </a>
             </div>
@@ -123,14 +125,14 @@ export default function Header() {
                 <NavigationMenu key={item.name}>
                   <NavigationMenuList>
                     <NavigationMenuItem>
-                      <NavigationMenuTrigger className="h-full bg-inherit p-0 font-normal text-white hover:bg-inherit hover:text-blue-500 focus:bg-inherit focus:text-white data-[active]:bg-inherit data-[state=open]:bg-inherit md:text-xs lg:text-lg">
+                      <NavigationMenuTrigger className="h-full bg-inherit p-0 font-normal text-white hover:bg-inherit hover:text-orange-500 focus:bg-inherit focus:text-white data-[active]:bg-inherit data-[state=open]:bg-inherit md:text-xs lg:text-lg">
                         <span>{item.name}</span>
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-[#2a2d43] p-4">
                         <ul
                           className={cn(
                             "flex flex-col space-y-2",
-                            i18n.dir() === "ltr" ? "text-left" : "text-right",
+                            isRTL ? "text-right" : "text-left",
                           )}
                         >
                           {item.children.map((subItem) => (
@@ -138,7 +140,7 @@ export default function Header() {
                               <NavigationMenuLink asChild>
                                 <Link
                                   to="/"
-                                  className="text-nowrap text-sm text-white hover:text-blue-500"
+                                  className="text-nowrap text-sm text-white hover:text-orange-500"
                                 >
                                   {subItem}
                                 </Link>
@@ -154,7 +156,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-white hover:text-blue-500"
+                  className="text-white hover:text-orange-500"
                 >
                   {item.name}
                 </Link>
@@ -163,7 +165,7 @@ export default function Header() {
           </div>
 
           <div className="flex w-40 justify-end lg:w-52">
-            <button className="rounded bg-blue-500 px-6 py-2 text-sm text-white hover:bg-blue-600 lg:text-base">
+            <button className="rounded bg-orange-500 px-6 py-2 text-sm text-white hover:bg-orange-600 lg:text-base">
               {t("header.contactButton")}
             </button>
           </div>
@@ -182,7 +184,7 @@ export default function Header() {
             </SheetTrigger>
 
             <SheetContent
-              side={i18n.dir() === "ltr" ? "left" : "right"}
+              side={isRTL ? "right" : "left"}
               className="max-h-screen w-screen max-w-[80%] overflow-y-auto border-none bg-[#030F27] p-0 text-white sm:max-w-[40%]"
               aria-describedby={undefined}
             >
@@ -227,7 +229,7 @@ export default function Header() {
                       <SheetTitle>
                         <Link
                           to={item.href}
-                          className="text-base font-semibold text-white hover:text-blue-500"
+                          className="text-base font-semibold text-white hover:text-orange-500"
                         >
                           {item.name}
                         </Link>
@@ -237,7 +239,7 @@ export default function Header() {
                 )}
               </ul>
 
-              <div className="px-8 py-3 flex h-14 border-t border-[#1e293b]">
+              <div className="flex h-14 border-t border-[#1e293b] px-8 py-3">
                 <LocaleSwitcher />
               </div>
             </SheetContent>

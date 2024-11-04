@@ -50,25 +50,25 @@ export default function Footer() {
             <div className="mt-6 flex gap-4">
               <a
                 href="#"
-                className="bg-blue-500 p-2 text-white hover:bg-blue-600"
+                className="bg-orange-500 p-2 text-white hover:bg-orange-600"
               >
                 <FaTwitter size={16} />
               </a>
               <a
                 href="#"
-                className="bg-blue-500 p-2 text-white hover:bg-blue-600"
+                className="bg-orange-500 p-2 text-white hover:bg-orange-600"
               >
                 <FaFacebook size={16} />
               </a>
               <a
                 href="#"
-                className="bg-blue-500 p-2 text-white hover:bg-blue-600"
+                className="bg-orange-500 p-2 text-white hover:bg-orange-600"
               >
                 <FaLinkedin size={16} />
               </a>
               <a
                 href="#"
-                className="bg-blue-500 p-2 text-white hover:bg-blue-600"
+                className="bg-orange-500 p-2 text-white hover:bg-orange-600"
               >
                 <FaInstagram size={16} />
               </a>
@@ -84,45 +84,45 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="flex items-center gap-2 hover:text-blue-500"
+                  className="flex items-center gap-2 hover:text-orange-500"
                 >
-                  <span className="text-blue-500">›</span>
+                  <span className="text-orange-500">›</span>
                   <span>{t("footer.quick_links.home")}</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="flex items-center gap-2 hover:text-blue-500"
+                  className="flex items-center gap-2 hover:text-orange-500"
                 >
-                  <span className="text-blue-500">›</span>
+                  <span className="text-orange-500">›</span>
                   <span>{t("footer.quick_links.about")}</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="flex items-center gap-2 hover:text-blue-500"
+                  className="flex items-center gap-2 hover:text-orange-500"
                 >
-                  <span className="text-blue-500">›</span>
+                  <span className="text-orange-500">›</span>
                   <span>{t("footer.quick_links.services")}</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="flex items-center gap-2 hover:text-blue-500"
+                  className="flex items-center gap-2 hover:text-orange-500"
                 >
-                  <span className="text-blue-500">›</span>
+                  <span className="text-orange-500">›</span>
                   <span>{t("footer.quick_links.projects")}</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="flex items-center gap-2 hover:text-blue-500"
+                  className="flex items-center gap-2 hover:text-orange-500"
                 >
-                  <span className="text-blue-500">›</span>
+                  <span className="text-orange-500">›</span>
                   <span>{t("footer.quick_links.contact")}</span>
                 </a>
               </li>
@@ -137,9 +137,9 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder={t("footer.newsletter.placeholder")}
-                  className="w-full rounded-none border border-gray-700 bg-transparent bg-white px-4 py-6 text-gray-700 focus:border-blue-500 focus:outline-none"
+                  className="w-full rounded-none border border-gray-700 bg-transparent bg-white px-4 py-6 text-gray-700 focus:border-orange-500 focus:outline-none"
                 />
-                <button className="text-nowrap bg-blue-500 px-6 py-6 text-white hover:bg-blue-600">
+                <button className="text-nowrap bg-orange-500 px-6 py-6 text-white hover:bg-orange-600">
                   {t("footer.newsletter.signup")}
                 </button>
               </div>
@@ -152,7 +152,7 @@ export default function Footer() {
       <div className="relative border-t border-gray-800 bg-[#2a2d43]">
         <div className="container mx-auto px-4 py-6">
           <div className="text-sm">
-            © <span className="text-blue-500">{t("footer.rights_company")}</span>
+            © <span className="text-orange-500">{t("footer.rights_company")}</span>
             {t("footer.rights_statement")}
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function Footer() {
         {/* Scroll to Top Button */}
         <button
           onClick={scrollToTop}
-          className="absolute bottom-6 end-6 bg-blue-500 p-3 text-white hover:bg-blue-600"
+          className="absolute bottom-6 end-6 bg-orange-500 p-3 text-white hover:bg-orange-600"
         >
           <FaArrowUp size={16} />
         </button>

@@ -16,7 +16,7 @@ export default function LocaleSwitcher() {
         <ToggleGroupItem
           key={code}
           value={code}
-          className="h-full w-8 rounded-lg bg-[#2a2d43] px-1 text-white transition-colors duration-200 hover:bg-gray-700 data-[state=on]:bg-blue-600 data-[state=on]:text-white md:text-xs lg:px-2 lg:text-sm"
+          className="h-full w-8 rounded-lg bg-[#2a2d43] px-1 text-white transition-colors duration-200 hover:bg-gray-700 data-[state=on]:bg-orange-600 data-[state=on]:text-white md:text-xs lg:px-2 lg:text-sm"
         >
           {name}
         </ToggleGroupItem>

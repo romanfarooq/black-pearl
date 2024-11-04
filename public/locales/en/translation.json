@@ -40,5 +40,19 @@
     },
     "rights_company": "The Black Pearls",
     "rights_statement": ", All Rights Reserved."
-  }
+  },
+  "hero": [
+    {
+      "title": "Leading MEP Contracting Firm in Saudi Arabia",
+      "subtitle": "Experience and Sustainability – These Are The Keys Of Success For The Black Pearls For Contracting In Executing Major Projects Across Saudi Arabia."
+    },
+    {
+      "title": "Commitment to Excellence",
+      "subtitle": "Our dedication to delivering high quality MEP services sets us apart, ensuring every project reflects our Continuous search of excellence."
+    },
+    {
+      "title": "Innovation in Action",
+      "subtitle": "We embrace cutting edge technology and innovative practices to lead the MEP industry towards sustainable and efficient solutions."
+    }
+  ]
 }
