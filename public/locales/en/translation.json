@@ -21,5 +21,24 @@
       "address": "6740, Mishrifah dist., Jeddah"
     },
     "contactButton": "CONTACT NOW"
+  },
+  "footer": {
+    "company_info": "For over 15 years, we’ve excelled in Electro Mechanical projects, delivering top-notch design build and turnkey solutions. Our passion for excellence shines through every aspect of design, engineering, and construction.",
+    "address": "6740, Mishrifah dist., Jeddah",
+    "quick_links": {
+      "title": "QUICK LINKS",
+      "home": "Home",
+      "about": "About Us",
+      "services": "Our Services",
+      "projects": "Our Projects",
+      "contact": "Contact Us"
+    },
+    "newsletter": {
+      "title": "NEWSLETTER",
+      "placeholder": "Your Email Address",
+      "signup": "SIGN UP"
+    },
+    "rights_company": "The Black Pearls",
+    "rights_statement": ", All Rights Reserved."
   }
 }

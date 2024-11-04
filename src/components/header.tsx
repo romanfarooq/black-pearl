@@ -70,11 +70,11 @@ export default function Header() {
   ];
 
   return (
-    <nav className="fixed z-40 flex w-full flex-col justify-between border-b border-blue-300 bg-[#1c1e2d]">
+    <nav className="fixed z-50 flex w-full flex-col justify-between border-b border-blue-300 bg-[#2a2d43]">
       <div className="px-4 py-2 lg:container lg:mx-auto">
         <div
           className={cn(
-            "hidden w-full border-b border-[#494e75] bg-[#1c1e2d] transition-all duration-500 ease-in-out md:block",
+            "hidden w-full border-b border-[#494e75] bg-[#2a2d43] transition-all duration-500 ease-in-out md:block",
             isScrolled
               ? "max-h-0 py-0 opacity-0"
               : "max-h-screen py-3 opacity-100",
@@ -126,7 +126,7 @@ export default function Header() {
                       <NavigationMenuTrigger className="h-full bg-inherit p-0 font-normal text-white hover:bg-inherit hover:text-blue-500 focus:bg-inherit focus:text-white data-[active]:bg-inherit data-[state=open]:bg-inherit md:text-xs lg:text-lg">
                         <span>{item.name}</span>
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="bg-[#1c1e2d] p-4">
+                      <NavigationMenuContent className="bg-[#2a2d43] p-4">
                         <ul
                           className={cn(
                             "flex flex-col space-y-2",

@@ -6,7 +6,7 @@ import { number, currency, datetime } from "@/i18n/formatters";
 
 export const supportedLngs = {
   en: "EN",
-  ar: "Ar",
+  ar: "AR",
 };
 
 i18n
