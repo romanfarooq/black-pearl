@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const carousel_time = 5000;
+const carousel_time = 10000;
 
 export default function HeroSection() {
   const { t, i18n } = useTranslation();
@@ -67,7 +68,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative h-[70vh] lg:h-screen w-full overflow-hidden pt-16">
+    <div className="relative h-[70vh] w-full overflow-hidden pt-16 lg:h-screen">
       <div
         className="flex h-full items-stretch transition-transform duration-500 ease-out"
         style={{
@@ -75,20 +76,40 @@ export default function HeroSection() {
         }}
       >
         {heroContent.map((content, index) => (
-          <div key={index} className="min-h-[70vh] lg:min-h-screen w-full flex-shrink-0">
+          <div
+            key={index}
+            className="min-h-[70vh] w-full flex-shrink-0 lg:min-h-screen"
+          >
             <div
               className="relative h-full w-full bg-cover bg-center"
               style={{ backgroundImage: `url(${content.image})` }}
             >
               <div className="absolute inset-0 bg-black opacity-40"></div>
-              <div className="relative z-10 mx-auto flex h-full w-full lg:max-w-[70%] flex-col items-center justify-center px-4 text-center text-white">
-                <h2 className="mb-2 text-3xl font-bold md:text-5xl">
+              <div className="relative z-10 mx-auto flex h-full w-full flex-col items-center justify-center px-4 text-center text-white lg:max-w-[70%]">
+                <motion.h2
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="mb-2 text-3xl font-bold md:text-5xl"
+                >
                   {content.title}
-                </h2>
-                <p className="mb-4 text-lg md:text-xl">{content.subtitle}</p>
-                <button className="border border-white px-6 py-2 text-white transition duration-300 hover:bg-white hover:text-black">
-                  {t("get_started")}
-                </button>
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="mb-4 text-lg md:text-xl"
+                >
+                  {content.subtitle}
+                </motion.p>
+                <motion.button
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="border border-white px-6 py-2 text-white hover:bg-white hover:text-black"
+                >
+                  {t("hero.0.get_started")}
+                </motion.button>
               </div>
             </div>
           </div>
@@ -98,7 +119,7 @@ export default function HeroSection() {
       <button
         onClick={isRTL ? goToNext : goToPrevious}
         dir="ltr"
-        className="absolute hidden md:block start-4 top-1/2 z-20 -translate-y-1/2 transform rounded-full bg-gray-700 bg-opacity-70 p-2 text-white hover:bg-opacity-90"
+        className="absolute start-4 top-1/2 z-20 hidden -translate-y-1/2 transform rounded-full bg-gray-700 bg-opacity-70 p-2 text-white hover:bg-opacity-90 md:block"
         aria-label="Previous Slide"
       >
         <FaChevronLeft size={20} />
@@ -106,7 +127,7 @@ export default function HeroSection() {
       <button
         onClick={isRTL ? goToPrevious : goToNext}
         dir="ltr"
-        className="absolute hidden md:block end-4 top-1/2 z-20 -translate-y-1/2 transform rounded-full bg-gray-700 bg-opacity-70 p-2 text-white hover:bg-opacity-90"
+        className="absolute end-4 top-1/2 z-20 hidden -translate-y-1/2 transform rounded-full bg-gray-700 bg-opacity-70 p-2 text-white hover:bg-opacity-90 md:block"
         aria-label="Next Slide"
       >
         <FaChevronRight size={20} />

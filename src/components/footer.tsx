@@ -160,7 +160,7 @@ export default function Footer() {
         {/* Scroll to Top Button */}
         <button
           onClick={scrollToTop}
-          className="absolute bottom-6 end-6 bg-orange-500 p-3 text-white hover:bg-orange-600"
+          className="absolute bottom-4 end-6 bg-orange-500 p-3 text-white hover:bg-orange-600"
         >
           <FaArrowUp size={16} />
         </button>
