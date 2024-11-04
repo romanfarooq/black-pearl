@@ -58,7 +58,7 @@ const SheetContent = React.forwardRef<
   <SheetPortal>
     <SheetOverlay />
     <SheetPrimitive.Close className="fixed end-6 top-5 z-50 text-white">
-      <X size={30} onClick={() => console.log("hello")} />
+      <X size={30} />
       <span className="sr-only">Close</span>
     </SheetPrimitive.Close>
     <SheetPrimitive.Content

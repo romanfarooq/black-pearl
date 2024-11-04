@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="mb-6 flex items-center">
               <img src="/src/assets/images/logo.webp" alt="logo" />
             </div>
-            <p className="mb-6 text-sm leading-relaxed">
+            <p className="mb-6 text-sm leading-relaxed text-justify">
               {t("footer.company_info")}
             </p>
             <div className="space-y-3">
@@ -42,7 +42,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-gray-400" />
-                <span dir="ltr" className="text-sm">
+                <span dir="ltr" className="sm:text-sm text-xs">
                   muhammmadmusaffa@theblackpearlsa.com
                 </span>
               </div>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Quick Links Section */}
           <div className="flex-1">
-            <h3 className="mb-6 text-xl font-bold text-white">
+            <h3 className="mb-6 md:my-6 text-xl font-bold text-white">
               {t("footer.quick_links.title")}
             </h3>
             <ul className="space-y-3">
@@ -129,7 +129,7 @@ export default function Footer() {
             </ul>
 
             {/* Newsletter Section */}
-            <div className="mt-8 md:mt-14">
+            <div className="mt-8">
               <h3 className="mb-6 text-xl font-bold text-white">
                 {t("footer.newsletter.title")}
               </h3>
