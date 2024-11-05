@@ -1,6 +1,7 @@
 import { Building, Home, PenTool, Palette, Settings, Pin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const ServiceCard = ({
   title,
@@ -13,7 +14,8 @@ const ServiceCard = ({
   description: string;
   index: number;
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
 
   return (
     <motion.div
@@ -45,17 +47,17 @@ const ServiceCard = ({
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-        className="flex flex-col h-full w-full px-6 pb-6 pt-14"
+        className="flex h-full w-full flex-col px-6 pb-6 pt-14"
       >
         <h3 className="text-center text-xl font-bold uppercase text-gray-900">
           {title}
         </h3>
 
-        <p className="mt-4 text-center text-sm text-gray-500 flex-grow">
+        <p className="mt-4 flex-grow text-center text-sm text-gray-500">
           {description}
         </p>
 
-        <div className="mt-auto pt-1 flex justify-center">
+        <div className="mt-auto flex justify-center pt-1">
           <button className="group/btn relative flex items-center gap-1 font-medium text-orange-500 transition-colors hover:text-orange-600">
             <span className="relative">
               {t("servicesSection.button")}
@@ -63,7 +65,12 @@ const ServiceCard = ({
               <span className="absolute -bottom-1 right-1/2 h-0.5 w-0 origin-center bg-orange-500 transition-all duration-300 group-hover/btn:w-1/2"></span>
             </span>
             <svg
-              className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1"
+              className={cn(
+                "h-4 w-4 transition-transform duration-300",
+                isRTL
+                  ? "rotate-180 group-hover/btn:-translate-x-1"
+                  : "group-hover/btn:translate-x-1",
+              )}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -125,12 +132,12 @@ export default function ServicesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="space-y-3 text-center"
+        className="space-y-3 text-center lg:mx-auto lg:w-8/12"
       >
         <h3 className="text-xs text-orange-500 sm:text-sm">
           {t("servicesSection.heading.subtitle")}
         </h3>
-        <h2 className="text-xl font-semibold text-gray-800 md:text-2xl">
+        <h2 className="text-xl font-bold leading-tight text-gray-800 md:text-2xl md:leading-normal">
           {t("servicesSection.heading.title")}
         </h2>
         <p className="text-sm text-gray-500 md:text-base">
