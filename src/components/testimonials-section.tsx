@@ -5,6 +5,8 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { cn } from "@/lib/utils";
 
 interface Testimonial {
   name: string;
@@ -68,6 +70,8 @@ const testimonials: Testimonial[] = [
 
 export default function Component() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
 
   return (
     <div className="bg-gray-100 px-4 py-16">
@@ -115,7 +119,12 @@ export default function Component() {
                     <blockquote className="relative text-start text-lg italic text-gray-600">
                       <span className="mr-2 text-5xl text-yellow-400">"</span>
                       <span>{testimonial.quote}</span>
-                      <span className="absolute translate-y-3 translate-x-2 transform text-5xl text-yellow-400">
+                      <span
+                        className={cn(
+                          "absolute translate-y-3 transform text-5xl text-yellow-400",
+                          isRTL ? "-translate-x-2" : "translate-x-2",
+                        )}
+                      >
                         "
                       </span>
                     </blockquote>
