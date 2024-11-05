@@ -1,19 +1,23 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function MainSection() {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
+
   const features = [
-    "HVAC Solutions",
-    "Plumbing Expertise",
-    "Maintenance Contracts",
-    "Electrical Services",
-    "Fire Safety",
-    "Safety and Security Measures",
+    t("features.hvac"),
+    t("features.plumbing"),
+    t("features.maintenance"),
+    t("features.electrical"),
+    t("features.fireSafety"),
+    t("features.security"),
   ];
-  
+
   const midPoint = Math.ceil(features.length / 2);
   const leftFeatures = features.slice(0, midPoint);
   const rightFeatures = features.slice(midPoint);
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -38,7 +42,7 @@ export default function MainSection() {
   };
 
   const featureColumnVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: isRTL ? 20 : -20 },
     visible: {
       opacity: 1,
       x: 0,
@@ -69,51 +73,38 @@ export default function MainSection() {
       variants={containerVariants}
       viewport={{ once: true, amount: 0.1 }}
     >
-      <motion.div 
+      <motion.div
         className="w-full space-y-3 md:w-[45%] lg:w-2/5"
         variants={containerVariants}
       >
-        <motion.h3 
+        <motion.h3
           className="text-xs text-orange-500 sm:text-sm md:text-base"
           variants={itemVariants}
         >
-          Embrace the future of Electro Mechanical Solutions with us
+          {t("features.title")}
         </motion.h3>
 
-        <motion.h2 
+        <motion.h2
           className="text-xl font-medium text-gray-800 md:text-2xl"
           variants={itemVariants}
         >
-          Mechanical, Electrical & Plumbing (MEP) Services
+          {t("features.subtitle")}
         </motion.h2>
 
-        <motion.p 
+        <motion.p
           className="text-sm text-gray-500 md:text-base"
           variants={itemVariants}
         >
-          The Black Pearl Est, a leading Electro Mechanical contractor in Saudi
-          Arabia, we specialize in HVAC, Fire Fighting, Electrical, and Plumbing
-          services, catering to clients seeking MEP contractors in Riyadh,
-          Jeddah, and across Saudi Arabia. With over 500 successful projects
-          completed, our experienced team ensures excellence in diverse sectors.
-          From comprehensive maintenance contracts to in-house design
-          capabilities, our MEP contracting company provides top-tier solutions
-          for your projects, delivering quality service throughout Saudi Arabia.
+          {t("features.description")}
         </motion.p>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-2 gap-4"
           variants={containerVariants}
         >
-          <motion.div 
-            className="space-y-4"
-            variants={featureColumnVariants}
-          >
+          <motion.div className="space-y-4" variants={featureColumnVariants}>
             {leftFeatures.map((feature, index) => (
-              <div
-                key={`left-${index}`}
-                className="flex items-center gap-2"
-              >
+              <div key={`left-${index}`} className="flex items-center gap-2">
                 <motion.svg
                   className="h-5 w-5 text-orange-500"
                   fill="currentColor"
@@ -133,15 +124,9 @@ export default function MainSection() {
               </div>
             ))}
           </motion.div>
-          <motion.div 
-            className="space-y-4"
-            variants={featureColumnVariants}
-          >
+          <motion.div className="space-y-4" variants={featureColumnVariants}>
             {rightFeatures.map((feature, index) => (
-              <div
-                key={`right-${index}`}
-                className="flex items-center gap-2"
-              >
+              <div key={`right-${index}`} className="flex items-center gap-2">
                 <motion.svg
                   className="h-5 w-5 text-orange-500"
                   fill="currentColor"
@@ -164,22 +149,22 @@ export default function MainSection() {
         </motion.div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="relative w-full max-w-xs md:w-[45%] lg:w-2/5"
         variants={imageVariants}
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <motion.div 
+        <motion.div
           className="absolute inset-0 bg-orange-500"
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 12, y: -12 }}
+          initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
+          whileInView={{ opacity: 1, x: isRTL ? -12 : 12, y: -12 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         />
         <motion.img
           src="/src/assets/images/main-section.jpg"
-          alt="Construction site"
+          alt={t("features.imageAlt")}
           className="relative h-auto w-full object-cover shadow-lg"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

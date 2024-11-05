@@ -1,5 +1,39 @@
 import Marquee from "@/components/ui/marquee";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
+const partners = [
+  {
+    name: "Johnson Controls",
+    img: "/src/assets/images/johnson-controls-logo.webp",
+    url: "https://me.johnsoncontrols.com/",
+  },
+  {
+    name: "Daikin",
+    img: "/src/assets/images/daikin-logo.webp",
+    url: "https://www.daikinmea.com/",
+  },
+  {
+    name: "Carrier",
+    img: "/src/assets/images/carrier-logo.webp",
+    url: "https://www.carrier.com/commercial/en/ae/",
+  },
+  {
+    name: "Zamil",
+    img: "/src/assets/images/zamil-ac-logo.webp",
+    url: "https://zamilac.com/",
+  },
+  {
+    name: "Trane",
+    img: "/src/assets/images/trane-logo.webp",
+    url: "https://www.trane.com/commercial/middle-east/sa/en.html",
+  },
+  {
+    name: "Gree",
+    img: "/src/assets/images/gree-logo.png",
+    url: "https://global.gree.com/",
+  },
+];
 
 const PartnerLogo = ({
   img,
@@ -9,59 +43,33 @@ const PartnerLogo = ({
   img: string;
   name: string;
   url: string;
-}) => (
-  <motion.div
-    className="mx-8"
-    whileHover={{
-      scale: 1.1,
-      transition: { duration: 0.3 },
-    }}
-  >
-    <a href={url} target="_blank" rel="noopener noreferrer">
-      <img
-        src={img}
-        alt={name}
-        className="h-20 w-auto object-contain"
-        aria-label={`Partner logo for ${name}`}
-      />
-    </a>
-  </motion.div>
-);
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <motion.div
+      className="mx-8"
+      whileHover={{
+        scale: 1.1,
+        transition: { duration: 0.3 },
+      }}
+    >
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <img
+          src={img}
+          alt={name}
+          className="h-20 w-auto object-contain"
+          aria-label={t("partnersSection.logoAriaLabel", { name })}
+        />
+      </a>
+    </motion.div>
+  );
+};
 
 export default function PartnersSection() {
-  const partners = [
-    {
-      name: "Johnson Controls",
-      img: "/src/assets/images/johnson-controls-logo.webp",
-      url: "https://me.johnsoncontrols.com/",
-    },
-    {
-      name: "Daikin",
-      img: "/src/assets/images/daikin-logo.webp",
-      url: "https://www.daikinmea.com/",
-    },
-    {
-      name: "Carrier",
-      img: "/src/assets/images/carrier-logo.webp",
-      url: "https://www.carrier.com/commercial/en/ae/",
-    },
-    {
-      name: "Zamil",
-      img: "/src/assets/images/zamil-ac-logo.webp",
-      url: "https://zamilac.com/",
-    },
-    {
-      name: "Trane",
-      img: "/src/assets/images/trane-logo.webp",
-      url: "https://www.trane.com/commercial/middle-east/sa/en.html",
-    },
-    {
-      name: "Gree",
-      img: "/src/assets/images/gree-logo.png",
-      url: "https://global.gree.com/",
-    },
-  ];
-  
+  const { t, i18n } = useTranslation();
+  const isLTR = i18n.dir() === "ltr";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -77,7 +85,7 @@ export default function PartnersSection() {
         viewport={{ once: true }}
         className="text-3xl font-bold text-gray-800"
       >
-        Our Partners
+        {t("partnersSection.title")}
       </motion.h2>
       <motion.p
         initial={{ opacity: 0 }}
@@ -86,8 +94,7 @@ export default function PartnersSection() {
         viewport={{ once: true }}
         className="text-center text-gray-500"
       >
-        Our success is built on strong partnerships, driving innovation and
-        excellence in MEP services across Saudi Arabia.
+        {t("partnersSection.description")}
       </motion.p>
       <motion.div
         initial={{ opacity: 0 }}
@@ -96,7 +103,12 @@ export default function PartnersSection() {
         viewport={{ once: true }}
         className="relative mt-4 flex w-full overflow-hidden rounded-lg bg-background"
       >
-        <Marquee pauseOnHover className="--duration:30s">
+        <Marquee
+          dir="ltr"
+          pauseOnHover
+          reverse={isLTR}
+          className="--duration:30s"
+        >
           {partners.map((partner) => (
             <PartnerLogo key={partner.name} {...partner} />
           ))}

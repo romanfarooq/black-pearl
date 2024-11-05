@@ -55,5 +55,57 @@
       "title": "Innovation in Action",
       "subtitle": "We embrace cutting edge technology and innovative practices to lead the MEP industry towards sustainable and efficient solutions."
     }
-  ]
+  ],
+  "features": {
+    "title": "Embrace the future of Electro Mechanical Solutions with us",
+    "subtitle": "Mechanical, Electrical & Plumbing (MEP) Services",
+    "description": "The Black Pearl Est, a leading Electro Mechanical contractor in Saudi Arabia, we specialize in HVAC, Fire Fighting, Electrical, and Plumbing services, catering to clients seeking MEP contractors in Riyadh, Jeddah, and across Saudi Arabia. With over 500 successful projects completed, our experienced team ensures excellence in diverse sectors. From comprehensive maintenance contracts to in-house design capabilities, our MEP contracting company provides top-tier solutions for your projects, delivering quality service throughout Saudi Arabia.",
+    "imageAlt": "Construction site",
+    "hvac": "HVAC Solutions",
+    "plumbing": "Plumbing Expertise",
+    "maintenance": "Maintenance Contracts",
+    "electrical": "Electrical Services",
+    "fireSafety": "Fire Safety",
+    "security": "Safety and Security Measures"
+  },
+
+  "servicesSection": {
+    "heading": {
+      "subtitle": "TRANSFORMING ELECTRO MECHANICAL EXCELLENCE IN KSA",
+      "title": "Our Customers' Projects are an Investment in the Future",
+      "description": "We Stand Out because of our amazing MEP team and our dedication to delivering great results. We make sure to understand our customers' needs and work hard to make a positive impact."
+    },
+    "services": [
+      {
+        "title": "HVAC Solutions",
+        "description": "Experience Comfort With Our Advanced HVAC Solutions In KSA, Perfect For All Seasons. We Promise Energy Efficient Climate Control For Any Space. Trust The Black Pearls For Top Quality MEP Services."
+      },
+      {
+        "title": "Electrical Services",
+        "description": "From setting up Power Systems to Fixing Electrical issues, our reliable electrical services throughout the Kingdom of Saudi Arabia. Keep your spaces Safe and Bright. Trust us for all your Electrical needs, big or small."
+      },
+      {
+        "title": "Plumbing Expertise",
+        "description": "Keep your water flowing smoothly with our Expert Plumbing services throughout KSA. We handle everything from Installations to Repairs, ensuring your Plumbing works Efficiently and Responsibly."
+      },
+      {
+        "title": "Fire Safety Systems",
+        "description": "Our Electro Mechanical services in KSA offer Reliable Fire Safety systems to keep your Property and People safe. We install advanced detectors and fast response systems for 24/7 Protection, giving you Peace of mind."
+      },
+      {
+        "title": "Maintenance Contracts",
+        "description": "Keep your Electro Mechanical systems running smoothly with our Maintenance Contracts. Our expert Technicians conduct regular check-ups and fixes, ensuring your systems work efficiently."
+      },
+      {
+        "title": "Safety and Security Measures",
+        "description": "Increase security with our easy-to-use Safety Solutions. From Controlling Access to Monitoring cameras, we use the latest Tech to make your space Safer for everyone and everything inside."
+      }
+    ],
+    "button": "READ MORE"
+  },
+  "partnersSection": {
+    "title": "Our Partners",
+    "description": "Our success is built on strong partnerships, driving innovation and excellence in MEP services across Saudi Arabia.",
+    "logoAriaLabel": "Partner logo for {{name}}"
+  }
 }
