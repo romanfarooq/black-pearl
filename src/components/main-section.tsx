@@ -77,12 +77,12 @@ export default function MainSection() {
         className="w-full space-y-3 md:w-[45%] lg:w-2/5"
         variants={containerVariants}
       >
-        <motion.h1 
+        <motion.h3 
           className="text-xs text-orange-500 sm:text-sm md:text-base"
           variants={itemVariants}
         >
           Embrace the future of Electro Mechanical Solutions with us
-        </motion.h1>
+        </motion.h3>
 
         <motion.h2 
           className="text-xl font-medium text-gray-800 md:text-2xl"
@@ -116,7 +116,7 @@ export default function MainSection() {
             {leftFeatures.map((feature, index) => (
               <div
                 key={`left-${index}`}
-                className="flex items-center space-x-2"
+                className="flex items-center gap-2"
               >
                 <motion.svg
                   className="h-5 w-5 text-orange-500"
@@ -143,7 +143,7 @@ export default function MainSection() {
             {rightFeatures.map((feature, index) => (
               <div
                 key={`right-${index}`}
-                className="flex items-center space-x-2"
+                className="flex items-center gap-2"
               >
                 <motion.svg
                   className="h-5 w-5 text-orange-500"
