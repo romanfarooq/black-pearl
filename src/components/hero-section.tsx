@@ -1,16 +1,15 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const carousel_time = 10000;
+const CAROUSEL_TIME = 10000;
 
 export default function HeroSection() {
   const { t, i18n } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-
   const isRTL = i18n.dir() === "rtl";
 
   const heroContent = [
@@ -31,41 +30,32 @@ export default function HeroSection() {
     },
   ];
 
-  useEffect(() => {
-    const startTimer = () => {
-      timerRef.current = setInterval(() => {
-        goToNext();
-      }, carousel_time);
-    };
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % heroContent.length);
+    }, CAROUSEL_TIME);
+  }, [heroContent.length]);
 
+  const goToSlide = useCallback((index: number) => {
+    setCurrentIndex(index);
     startTimer();
+  }, [startTimer]);
 
+  const goToPrevious = useCallback(() => {
+    goToSlide(currentIndex === 0 ? heroContent.length - 1 : currentIndex - 1);
+  }, [currentIndex, heroContent.length, goToSlide]);
+
+  const goToNext = useCallback(() => {
+    goToSlide((currentIndex + 1) % heroContent.length);
+  }, [currentIndex, heroContent.length, goToSlide]);
+
+  useEffect(() => {
+    startTimer();
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [currentIndex]);
-
-  const resetTimer = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    const startTimer = () => {
-      timerRef.current = setInterval(() => {
-        goToNext();
-      }, carousel_time);
-    };
-    startTimer();
-  };
-
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? heroContent.length - 1 : prevIndex - 1,
-    );
-    resetTimer();
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
-    resetTimer();
-  };
+  }, [startTimer]);
 
   return (
     <div className="relative h-[70vh] w-full overflow-hidden pt-10 md:pt-16 lg:h-screen">
@@ -138,7 +128,7 @@ export default function HeroSection() {
         {heroContent.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => goToSlide(index)}
             className={cn(
               "h-2 w-2 rounded-full transition-all duration-300",
               currentIndex === index ? "w-4 bg-white" : "bg-white/50",
