@@ -1,19 +1,19 @@
 import { motion } from "framer-motion";
 
-const features = [
-  "HVAC Solutions",
-  "Plumbing Expertise",
-  "Maintenance Contracts",
-  "Electrical Services",
-  "Fire Safety",
-  "Safety and Security Measures",
-];
-
-const midPoint = Math.ceil(features.length / 2);
-const leftFeatures = features.slice(0, midPoint);
-const rightFeatures = features.slice(midPoint);
-
 export default function MainSection() {
+  const features = [
+    "HVAC Solutions",
+    "Plumbing Expertise",
+    "Maintenance Contracts",
+    "Electrical Services",
+    "Fire Safety",
+    "Safety and Security Measures",
+  ];
+  
+  const midPoint = Math.ceil(features.length / 2);
+  const leftFeatures = features.slice(0, midPoint);
+  const rightFeatures = features.slice(midPoint);
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

@@ -1,40 +1,15 @@
 import Marquee from "@/components/ui/marquee";
 import { motion } from "framer-motion";
 
-const partners = [
-  {
-    name: "Johnson Controls",
-    img: "/src/assets/images/johnson-controls-logo.webp",
-    url: "https://me.johnsoncontrols.com/",
-  },
-  {
-    name: "Daikin",
-    img: "/src/assets/images/daikin-logo.webp",
-    url: "https://www.daikinmea.com/",
-  },
-  {
-    name: "Carrier",
-    img: "/src/assets/images/carrier-logo.webp",
-    url: "https://www.carrier.com/commercial/en/ae/",
-  },
-  {
-    name: "Zamil",
-    img: "/src/assets/images/zamil-ac-logo.webp",
-    url: "https://zamilac.com/",
-  },
-  {
-    name: "Trane",
-    img: "/src/assets/images/trane-logo.webp",
-    url: "https://www.trane.com/commercial/middle-east/sa/en.html",
-  },
-  {
-    name: "Gree",
-    img: "/src/assets/images/gree-logo.png",
-    url: "https://global.gree.com/",
-  },
-];
-
-const PartnerLogo = ({ img, name, url }: { img: string; name: string; url: string }) => (
+const PartnerLogo = ({
+  img,
+  name,
+  url,
+}: {
+  img: string;
+  name: string;
+  url: string;
+}) => (
   <motion.div
     className="mx-8"
     whileHover={{
@@ -54,6 +29,39 @@ const PartnerLogo = ({ img, name, url }: { img: string; name: string; url: strin
 );
 
 export default function PartnersSection() {
+  const partners = [
+    {
+      name: "Johnson Controls",
+      img: "/src/assets/images/johnson-controls-logo.webp",
+      url: "https://me.johnsoncontrols.com/",
+    },
+    {
+      name: "Daikin",
+      img: "/src/assets/images/daikin-logo.webp",
+      url: "https://www.daikinmea.com/",
+    },
+    {
+      name: "Carrier",
+      img: "/src/assets/images/carrier-logo.webp",
+      url: "https://www.carrier.com/commercial/en/ae/",
+    },
+    {
+      name: "Zamil",
+      img: "/src/assets/images/zamil-ac-logo.webp",
+      url: "https://zamilac.com/",
+    },
+    {
+      name: "Trane",
+      img: "/src/assets/images/trane-logo.webp",
+      url: "https://www.trane.com/commercial/middle-east/sa/en.html",
+    },
+    {
+      name: "Gree",
+      img: "/src/assets/images/gree-logo.png",
+      url: "https://global.gree.com/",
+    },
+  ];
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
