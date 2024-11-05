@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const features = [
   "HVAC Solutions",
@@ -15,9 +14,6 @@ const leftFeatures = features.slice(0, midPoint);
 const rightFeatures = features.slice(midPoint);
 
 export default function MainSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -67,11 +63,11 @@ export default function MainSection() {
 
   return (
     <motion.div
-      ref={ref}
       className="flex flex-col items-center gap-8 px-4 py-12 md:flex-row md:justify-center md:gap-16 lg:gap-32"
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      whileInView="visible"
       variants={containerVariants}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <motion.div 
         className="w-full space-y-3 md:w-[45%] lg:w-2/5"
@@ -123,8 +119,9 @@ export default function MainSection() {
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : { scale: 0 }}
+                  whileInView={{ scale: 1 }}
                   transition={{ duration: 0.3 }}
+                  viewport={{ once: true }}
                 >
                   <path
                     fillRule="evenodd"
@@ -150,8 +147,9 @@ export default function MainSection() {
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : { scale: 0 }}
+                  whileInView={{ scale: 1 }}
                   transition={{ duration: 0.3 }}
+                  viewport={{ once: true }}
                 >
                   <path
                     fillRule="evenodd"
@@ -169,20 +167,24 @@ export default function MainSection() {
       <motion.div 
         className="relative w-full max-w-xs md:w-[45%] lg:w-2/5"
         variants={imageVariants}
+        whileInView="visible"
+        viewport={{ once: true }}
       >
         <motion.div 
           className="absolute inset-0 bg-orange-500"
           initial={{ opacity: 0, x: 20 }}
-          animate={isInView ? { opacity: 1, x: 12, y: -12 } : { opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 12, y: -12 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
         />
         <motion.img
           src="/src/assets/images/main-section.jpg"
           alt="Construction site"
           className="relative h-auto w-full object-cover shadow-lg"
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
         />
       </motion.div>
     </motion.div>

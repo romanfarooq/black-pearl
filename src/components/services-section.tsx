@@ -8,7 +8,7 @@ const ServiceCard = ({
   index,
 }: {
   title: string;
-  icon: any;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   description: string;
   index: number;
 }) => {
@@ -17,8 +17,8 @@ const ServiceCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: (index + 1) * 0.1 }}
-      className="group flex flex-col items-center overflow-hidden bg-white shadow-lg"
+      transition={{ duration: 0.5, delay: (index + 1) * 0.2 }}
+      className="group flex flex-col overflow-hidden bg-white shadow-lg"
     >
       <div className="relative w-full">
         <motion.img
@@ -42,15 +42,17 @@ const ServiceCard = ({
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-        className="w-full px-6 pb-6 pt-14"
+        className="flex flex-col h-full w-full px-6 pb-6 pt-14"
       >
         <h3 className="text-center text-xl font-bold uppercase text-gray-900">
           {title}
         </h3>
 
-        <p className="mt-4 text-center text-sm text-gray-500">{description}</p>
+        <p className="mt-4 text-center text-sm text-gray-500 flex-grow">
+          {description}
+        </p>
 
-        <div className="mt-4 flex justify-center">
+        <div className="mt-auto pt-1 flex justify-center">
           <button className="group/btn relative flex items-center gap-1 font-medium text-orange-500 transition-colors hover:text-orange-600">
             <span className="relative">
               READ MORE
@@ -77,7 +79,7 @@ const ServiceCard = ({
   );
 };
 
-export default function ServiceSection() {
+export default function ServicesSection() {
   const services = [
     {
       title: "HVAC Solutions",
@@ -123,7 +125,7 @@ export default function ServiceSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5 , delay: 0.5 }}
         className="space-y-3 text-center"
       >
         <h3 className="text-xs text-orange-500 sm:text-sm">
