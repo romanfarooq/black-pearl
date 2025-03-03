@@ -17,7 +17,7 @@ interface Testimonial {
   quote: string;
 }
 
-export default function Component() {
+export default function TestimonialsSection() {
   const { i18n, t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 

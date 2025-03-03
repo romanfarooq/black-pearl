@@ -52,12 +52,12 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { name: t("header.navItems.home"), href: "/home" },
-    { name: t("header.navItems.about"), href: "/home" },
-    { name: t("header.navItems.projects"), href: "/home" },
+    { name: t("header.navItems.home"), href: "/" },
+    { name: t("header.navItems.about"), href: "/" },
+    { name: t("header.navItems.projects"), href: "/" },
     {
       name: t("header.navItems.services"),
-      href: "/home",
+      href: "/",
       hasChildren: true,
       children: [
         t("header.navItems.children.hvacSolutions"),
@@ -68,8 +68,8 @@ export default function Header() {
         t("header.navItems.children.maintenanceContracts"),
       ],
     },
-    { name: t("header.navItems.blog"), href: "/home" },
-    { name: t("header.navItems.contact"), href: "/home" },
+    { name: t("header.navItems.blog"), href: "/" },
+    { name: t("header.navItems.contact"), href: "/" },
   ];
 
   return (
@@ -150,7 +150,7 @@ export default function Header() {
                                 asChild
                                 className="text-sm text-nowrap text-white hover:bg-[#2a2d43] hover:text-orange-500 focus:bg-[#2a2d43] focus:text-orange-500 data-[active=true]:bg-[#2a2d43] data-[active=true]:text-orange-500 data-[active=true]:hover:bg-[#2a2d43] data-[active=true]:focus:bg-[#2a2d43]"
                               >
-                                <Link to="/home">{subItem}</Link>
+                                <Link to="/">{subItem}</Link>
                               </NavigationMenuLink>
                             </li>
                           ))}
@@ -221,7 +221,7 @@ export default function Header() {
                                 key={subItem}
                                 className="border-t border-[#1e293b] px-8 py-3"
                               >
-                                <Link to="/home">{subItem}</Link>
+                                <Link to="/">{subItem}</Link>
                               </li>
                             ))}
                           </ul>

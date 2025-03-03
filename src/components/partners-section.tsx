@@ -1,6 +1,6 @@
-import Marquee from "@/components/ui/marquee";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Marquee } from "@/components/ui/marquee";
 
 const partners = [
   {
@@ -103,12 +103,7 @@ export default function PartnersSection() {
         viewport={{ once: true }}
         className="bg-background relative mt-4 flex w-full overflow-hidden rounded-lg"
       >
-        <Marquee
-          dir="ltr"
-          pauseOnHover
-          reverse={isLTR}
-          className="--duration:30s"
-        >
+        <Marquee dir="ltr" pauseOnHover reverse={isLTR}>
           {partners.map((partner) => (
             <PartnerLogo key={partner.name} {...partner} />
           ))}
