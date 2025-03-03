@@ -134,7 +134,7 @@ export default function Header() {
                 <NavigationMenu key={item.name}>
                   <NavigationMenuList>
                     <NavigationMenuItem>
-                      <NavigationMenuTrigger className="h-full bg-inherit p-0 font-normal text-white hover:bg-inherit hover:text-orange-500 focus:bg-inherit focus:text-white data-active:bg-inherit data-[state=open]:bg-inherit md:text-xs lg:text-lg">
+                      <NavigationMenuTrigger className="h-full cursor-pointer bg-inherit p-0 font-normal text-white hover:bg-inherit hover:text-orange-500 focus:bg-inherit focus:text-white data-[active=true]:bg-inherit data-[state=open]:bg-inherit data-[state=open]:text-white data-[state=open]:hover:bg-inherit data-[state=open]:hover:text-orange-500 data-[state=open]:focus:bg-inherit data-[state=open]:focus:text-white md:text-xs lg:text-lg">
                         <span>{item.name}</span>
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-[#2a2d43] p-4">
@@ -146,13 +146,11 @@ export default function Header() {
                         >
                           {item.children.map((subItem) => (
                             <li key={subItem}>
-                              <NavigationMenuLink asChild>
-                                <Link
-                                  to="/home"
-                                  className="text-sm text-nowrap text-white hover:text-orange-500"
-                                >
-                                  {subItem}
-                                </Link>
+                              <NavigationMenuLink
+                                asChild
+                                className="text-sm text-nowrap text-white hover:bg-[#2a2d43] hover:text-orange-500 focus:bg-[#2a2d43] focus:text-orange-500 data-[active=true]:bg-[#2a2d43] data-[active=true]:text-orange-500 data-[active=true]:hover:bg-[#2a2d43] data-[active=true]:focus:bg-[#2a2d43]"
+                              >
+                                <Link to="/home">{subItem}</Link>
                               </NavigationMenuLink>
                             </li>
                           ))}
