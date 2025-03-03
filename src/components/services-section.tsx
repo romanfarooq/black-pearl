@@ -53,7 +53,7 @@ const ServiceCard = ({
           {title}
         </h3>
 
-        <p className="mt-4 flex-grow text-center text-sm text-gray-500">
+        <p className="mt-4 grow text-center text-sm text-gray-500">
           {description}
         </p>
 

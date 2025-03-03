@@ -137,7 +137,7 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder={t("footer.newsletter.placeholder")}
-                  className="w-full rounded-none border border-gray-700 bg-transparent bg-white px-4 py-6 text-gray-700 focus:border-orange-500 focus:outline-none"
+                  className="w-full rounded-none border border-gray-700 bg-transparent bg-white px-4 py-6 text-gray-700 focus:border-orange-500 focus:outline-hidden"
                 />
                 <button className="text-nowrap bg-orange-500 px-6 py-6 text-white hover:bg-orange-600">
                   {t("footer.newsletter.signup")}

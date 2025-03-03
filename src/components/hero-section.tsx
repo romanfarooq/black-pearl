@@ -68,7 +68,7 @@ export default function HeroSection() {
         {heroContent.map((content, index) => (
           <div
             key={index}
-            className="min-h-[70vh] w-full flex-shrink-0 lg:min-h-screen"
+            className="min-h-[70vh] w-full shrink-0 lg:min-h-screen"
           >
             <div
               className="relative h-full w-full bg-cover bg-center"

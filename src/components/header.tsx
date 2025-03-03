@@ -134,7 +134,7 @@ export default function Header() {
                 <NavigationMenu key={item.name}>
                   <NavigationMenuList>
                     <NavigationMenuItem>
-                      <NavigationMenuTrigger className="h-full bg-inherit p-0 font-normal text-white hover:bg-inherit hover:text-orange-500 focus:bg-inherit focus:text-white data-[active]:bg-inherit data-[state=open]:bg-inherit md:text-xs lg:text-lg">
+                      <NavigationMenuTrigger className="h-full bg-inherit p-0 font-normal text-white hover:bg-inherit hover:text-orange-500 focus:bg-inherit focus:text-white data-active:bg-inherit data-[state=open]:bg-inherit md:text-xs lg:text-lg">
                         <span>{item.name}</span>
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-[#2a2d43] p-4">
