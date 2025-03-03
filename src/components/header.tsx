@@ -149,7 +149,7 @@ export default function Header() {
                               <NavigationMenuLink asChild>
                                 <Link
                                   to="/home"
-                                  className="text-nowrap text-sm text-white hover:text-orange-500"
+                                  className="text-sm text-nowrap text-white hover:text-orange-500"
                                 >
                                   {subItem}
                                 </Link>

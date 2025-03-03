@@ -47,9 +47,9 @@ const ServiceCard = ({
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-        className="flex h-full w-full flex-col px-6 pb-6 pt-14"
+        className="flex h-full w-full flex-col px-6 pt-14 pb-6"
       >
-        <h3 className="text-center text-xl font-bold uppercase text-gray-900">
+        <h3 className="text-center text-xl font-bold text-gray-900 uppercase">
           {title}
         </h3>
 
@@ -62,7 +62,7 @@ const ServiceCard = ({
             <span className="relative">
               {t("servicesSection.button")}
               <span className="absolute -bottom-1 left-1/2 h-0.5 w-0 origin-center bg-orange-500 transition-all duration-300 group-hover/btn:w-1/2"></span>
-              <span className="absolute -bottom-1 right-1/2 h-0.5 w-0 origin-center bg-orange-500 transition-all duration-300 group-hover/btn:w-1/2"></span>
+              <span className="absolute right-1/2 -bottom-1 h-0.5 w-0 origin-center bg-orange-500 transition-all duration-300 group-hover/btn:w-1/2"></span>
             </span>
             <svg
               className={cn(
@@ -137,7 +137,7 @@ export default function ServicesSection() {
         <h3 className="text-xs text-orange-500 sm:text-sm">
           {t("servicesSection.heading.subtitle")}
         </h3>
-        <h2 className="text-xl font-bold leading-tight text-gray-800 md:text-2xl md:leading-normal">
+        <h2 className="text-xl leading-tight font-bold text-gray-800 md:text-2xl md:leading-normal">
           {t("servicesSection.heading.title")}
         </h2>
         <p className="text-sm text-gray-500 md:text-base">

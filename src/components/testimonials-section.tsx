@@ -54,13 +54,13 @@ export default function Component() {
           <CarouselPrevious
             className={cn(
               isRTL ? "-left-4 lg:-left-8" : "-left-4 lg:-left-8",
-              "rtl:rotate-180",
+              "cursor-pointer rtl:rotate-180",
             )}
           />
           <CarouselNext
             className={cn(
               isRTL ? "-right-4 lg:-right-8" : "-right-4 lg:-right-8",
-              "rtl:rotate-180",
+              "cursor-pointer rtl:rotate-180",
             )}
           />
           <CarouselContent>
@@ -81,7 +81,7 @@ export default function Component() {
                       )}
                     </div>
 
-                    <blockquote className="relative text-start text-lg italic text-gray-600">
+                    <blockquote className="relative text-start text-lg text-gray-600 italic">
                       <span className="mr-2 text-5xl text-yellow-400">"</span>
                       <span>{testimonial.quote}</span>
                       <span

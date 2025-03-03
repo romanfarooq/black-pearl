@@ -101,7 +101,7 @@ export default function PartnersSection() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.6 }}
         viewport={{ once: true }}
-        className="relative mt-4 flex w-full overflow-hidden rounded-lg bg-background"
+        className="bg-background relative mt-4 flex w-full overflow-hidden rounded-lg"
       >
         <Marquee
           dir="ltr"

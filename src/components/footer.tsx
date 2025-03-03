@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="mb-6 flex items-center">
               <img src="/src/assets/images/logo.webp" alt="logo" />
             </div>
-            <p className="mb-6 text-sm leading-relaxed text-justify">
+            <p className="mb-6 text-justify text-sm leading-relaxed">
               {t("footer.company_info")}
             </p>
             <div className="space-y-3">
@@ -42,7 +42,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-gray-400" />
-                <span dir="ltr" className="sm:text-sm text-xs">
+                <span dir="ltr" className="text-xs sm:text-sm">
                   muhammmadmusaffa@theblackpearlsa.com
                 </span>
               </div>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Quick Links Section */}
           <div className="flex-1">
-            <h3 className="mb-6 md:my-6 text-xl font-bold text-white">
+            <h3 className="mb-6 text-xl font-bold text-white md:my-6">
               {t("footer.quick_links.title")}
             </h3>
             <ul className="space-y-3">
@@ -139,7 +139,7 @@ export default function Footer() {
                   placeholder={t("footer.newsletter.placeholder")}
                   className="w-full rounded-none border border-gray-700 bg-transparent bg-white px-4 py-6 text-gray-700 focus:border-orange-500 focus:outline-hidden"
                 />
-                <button className="text-nowrap bg-orange-500 px-6 py-6 text-white hover:bg-orange-600">
+                <button className="bg-orange-500 px-6 py-6 text-nowrap text-white hover:bg-orange-600">
                   {t("footer.newsletter.signup")}
                 </button>
               </div>
@@ -152,7 +152,10 @@ export default function Footer() {
       <div className="relative border-t border-gray-800 bg-[#2a2d43]">
         <div className="container mx-auto px-4 py-6">
           <div className="text-sm">
-            © <span className="text-orange-500">{t("footer.rights_company")}</span>
+            ©{" "}
+            <span className="text-orange-500">
+              {t("footer.rights_company")}
+            </span>
             {t("footer.rights_statement")}
           </div>
         </div>
@@ -160,7 +163,7 @@ export default function Footer() {
         {/* Scroll to Top Button */}
         <button
           onClick={scrollToTop}
-          className="absolute bottom-4 end-6 bg-orange-500 p-3 text-white hover:bg-orange-600"
+          className="absolute end-6 bottom-4 bg-orange-500 p-3 text-white hover:bg-orange-600"
         >
           <FaArrowUp size={16} />
         </button>

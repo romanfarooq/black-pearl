@@ -33,14 +33,17 @@ export default function HeroSection() {
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % heroContent.length);
+      setCurrentIndex((prev) => (prev + 1) % heroContent.length);
     }, CAROUSEL_TIME);
   }, [heroContent.length]);
 
-  const goToSlide = useCallback((index: number) => {
-    setCurrentIndex(index);
-    startTimer();
-  }, [startTimer]);
+  const goToSlide = useCallback(
+    (index: number) => {
+      setCurrentIndex(index);
+      startTimer();
+    },
+    [startTimer],
+  );
 
   const goToPrevious = useCallback(() => {
     goToSlide(currentIndex === 0 ? heroContent.length - 1 : currentIndex - 1);
@@ -110,7 +113,7 @@ export default function HeroSection() {
       <button
         onClick={isRTL ? goToNext : goToPrevious}
         dir="ltr"
-        className="absolute start-4 top-1/2 z-20 hidden -translate-y-1/2 transform rounded-full bg-gray-700 bg-opacity-70 p-2 text-white hover:bg-opacity-90 md:block"
+        className="bg-opacity-70 hover:bg-opacity-90 absolute start-4 top-1/2 z-20 hidden -translate-y-1/2 transform cursor-pointer rounded-full bg-gray-700 p-2 text-white md:block"
         aria-label="Previous Slide"
       >
         <FaChevronLeft size={20} />
@@ -118,7 +121,7 @@ export default function HeroSection() {
       <button
         onClick={isRTL ? goToPrevious : goToNext}
         dir="ltr"
-        className="absolute end-4 top-1/2 z-20 hidden -translate-y-1/2 transform rounded-full bg-gray-700 bg-opacity-70 p-2 text-white hover:bg-opacity-90 md:block"
+        className="bg-opacity-70 hover:bg-opacity-90 absolute end-4 top-1/2 z-20 hidden -translate-y-1/2 transform cursor-pointer rounded-full bg-gray-700 p-2 text-white md:block"
         aria-label="Next Slide"
       >
         <FaChevronRight size={20} />
