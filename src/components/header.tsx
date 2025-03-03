@@ -53,11 +53,11 @@ export default function Header() {
 
   const navItems = [
     { name: t("header.navItems.home"), href: "/home" },
-    { name: t("header.navItems.about"), href: "/about" },
-    { name: t("header.navItems.projects"), href: "/projects" },
+    { name: t("header.navItems.about"), href: "/home" },
+    { name: t("header.navItems.projects"), href: "/home" },
     {
       name: t("header.navItems.services"),
-      href: "/services",
+      href: "/home",
       hasChildren: true,
       children: [
         t("header.navItems.children.hvacSolutions"),
@@ -68,8 +68,8 @@ export default function Header() {
         t("header.navItems.children.maintenanceContracts"),
       ],
     },
-    { name: t("header.navItems.blog"), href: "/blog" },
-    { name: t("header.navItems.contact"), href: "/contact" },
+    { name: t("header.navItems.blog"), href: "/home" },
+    { name: t("header.navItems.contact"), href: "/home" },
   ];
 
   return (
@@ -148,7 +148,7 @@ export default function Header() {
                             <li key={subItem}>
                               <NavigationMenuLink asChild>
                                 <Link
-                                  to="/"
+                                  to="/home"
                                   className="text-nowrap text-sm text-white hover:text-orange-500"
                                 >
                                   {subItem}
@@ -223,7 +223,7 @@ export default function Header() {
                                 key={subItem}
                                 className="border-t border-[#1e293b] px-8 py-3"
                               >
-                                <Link to="/">{subItem}</Link>
+                                <Link to="/home">{subItem}</Link>
                               </li>
                             ))}
                           </ul>

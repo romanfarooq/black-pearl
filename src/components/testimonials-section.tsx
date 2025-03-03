@@ -1,77 +1,31 @@
 import { useState } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import { Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+import {
+  Carousel,
+  CarouselItem,
+  CarouselNext,
+  CarouselContent,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface Testimonial {
   name: string;
   role: string;
-  image: string;
   rating: number;
   quote: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    name: "Saul Goodman 1",
-    role: "Ceo & Founder",
-    image: "/placeholder.svg?height=80&width=80",
-    rating: 5,
-    quote:
-      "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.",
-  },
-  {
-    name: "Sara Wilsson 2",
-    role: "Designer",
-    image: "/placeholder.svg?height=80&width=80",
-    rating: 5,
-    quote:
-      "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.",
-  },
-  {
-    name: "Saul Goodman",
-    role: "Ceo & Founder",
-    image: "/placeholder.svg?height=80&width=80",
-    rating: 5,
-    quote:
-      "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.",
-  },
-  {
-    name: "Sara Wilsson",
-    role: "Designer",
-    image: "/placeholder.svg?height=80&width=80",
-    rating: 5,
-    quote:
-      "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.",
-  },
-  {
-    name: "Saul Goodman",
-    role: "Ceo & Founder",
-    image: "/placeholder.svg?height=80&width=80",
-    rating: 5,
-    quote:
-      "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.",
-  },
-  {
-    name: "Sara Wilsson",
-    role: "Designer",
-    image: "/placeholder.svg?height=80&width=80",
-    rating: 5,
-    quote:
-      "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.",
-  },
-  // Add more testimonials as needed
-];
-
 export default function Component() {
+  const { i18n, t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { i18n } = useTranslation();
+
   const isRTL = i18n.dir() === "rtl";
+
+  const testimonials = t("testimonials.items", {
+    returnObjects: true,
+  }) as Testimonial[];
 
   return (
     <div className="bg-gray-100 px-4 py-16">
@@ -82,26 +36,37 @@ export default function Component() {
           <span className="h-1 w-12 bg-yellow-400"></span>
         </h2>
         <p className="mx-auto mb-12 max-w-3xl text-gray-600">
-          Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum
-          nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti
+          {t("testimonials.description")}
         </p>
-
         <Carousel
           opts={{
             align: "start",
-            loop: true,
+            dragFree: false,
+            direction: isRTL ? "rtl" : "ltr",
           }}
-          className="w-full"
+          className="relative w-full"
           setApi={(api) => {
             api?.on("select", () => {
               setCurrentSlide(api.selectedScrollSnap());
             });
           }}
         >
+          <CarouselPrevious
+            className={cn(
+              isRTL ? "-left-4 lg:-left-8" : "-left-4 lg:-left-8",
+              "rtl:rotate-180",
+            )}
+          />
+          <CarouselNext
+            className={cn(
+              isRTL ? "-right-4 lg:-right-8" : "-right-4 lg:-right-8",
+              "rtl:rotate-180",
+            )}
+          />
           <CarouselContent>
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <CarouselItem
-                key={index}
+                key={testimonial.name}
                 className="flex justify-center px-10 md:basis-1/2 lg:basis-1/2"
               >
                 <div className="grid w-full items-start rounded-lg bg-white px-8 py-10 shadow-lg">
@@ -135,10 +100,13 @@ export default function Component() {
           </CarouselContent>
         </Carousel>
         <div className="mt-8 flex items-center justify-center gap-4">
-          {testimonials.map((_, index) => (
-            <div
-              key={index}
-              className="h-3 w-3 rounded-full bg-yellow-400 opacity-30 first:opacity-100"
+          {testimonials.map((testimonial, index) => (
+            <button
+              key={testimonial.name}
+              className={cn(
+                "h-3 w-3 rounded-full bg-yellow-400 transition-opacity",
+                currentSlide === index ? "opacity-100" : "opacity-30",
+              )}
             />
           ))}
         </div>

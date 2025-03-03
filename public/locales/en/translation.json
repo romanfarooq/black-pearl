@@ -107,5 +107,47 @@
     "title": "Our Partners",
     "description": "Our success is built on strong partnerships, driving innovation and excellence in MEP services across Saudi Arabia.",
     "logoAriaLabel": "Partner logo for {{name}}"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "description": "Discover what our valued clients have to say about our MEP services and commitment to excellence in Saudi Arabia.",
+    "items": [
+      {
+        "name": "Ahmed Al-Sayed",
+        "role": "Project Manager, Royal Heights Development",
+        "quote": "The Black Pearl team demonstrated exceptional expertise in handling our complex HVAC requirements. Their attention to detail and commitment to deadlines was impressive.",
+        "rating": 5
+      },
+      {
+        "name": "Sarah Thompson",
+        "role": "Facility Director, International Medical Center",
+        "quote": "Outstanding electrical and safety systems implementation. Their maintenance service is reliable and their team is always responsive to our needs.",
+        "rating": 4
+      },
+      {
+        "name": "Khalid Al-Rahman",
+        "role": "Operations Manager, Al Madinah Hotels",
+        "quote": "From plumbing to HVAC, their comprehensive MEP solutions have significantly improved our hotel's efficiency. Highly recommended for large-scale projects.",
+        "rating": 4
+      },
+      {
+        "name": "Lisa Chen",
+        "role": "Chief Engineer, Tech Valley Complex",
+        "quote": "Their innovative approach to energy-efficient MEP systems has helped us achieve our sustainability goals while reducing operational costs.",
+        "rating": 5
+      },
+      {
+        "name": "Mohammed Al-Harbi",
+        "role": "Development Director, Green Square Mall",
+        "quote": "Exceptional fire safety and security system installation. Their team's expertise and professionalism made the entire process smooth and worry-free.",
+        "rating": 4
+      },
+      {
+        "name": "James Wilson",
+        "role": "Technical Director, Smart Buildings Co",
+        "quote": "The maintenance contracts with Black Pearl have proven invaluable. Their preventive maintenance approach has helped us avoid major system issues.",
+        "rating": 4
+      }
+    ]
   }
 }
