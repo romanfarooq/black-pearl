@@ -163,7 +163,7 @@ export default function MainSection() {
           viewport={{ once: true }}
         />
         <motion.img
-          src="/src/assets/images/main-section.jpg"
+          src="/images/main-section.jpg"
           alt={t("features.imageAlt")}
           className="relative h-auto w-full object-cover shadow-lg"
           initial={{ opacity: 0 }}

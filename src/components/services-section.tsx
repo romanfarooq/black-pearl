@@ -31,7 +31,7 @@ const ServiceCard = ({
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          src={`/src/assets/images/service-${index + 1}.jpg`}
+          src={`/images/service-${index + 1}.jpg`}
           alt={title}
           className="h-48 w-full object-cover"
         />

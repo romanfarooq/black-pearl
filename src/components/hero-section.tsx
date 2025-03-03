@@ -14,17 +14,17 @@ export default function HeroSection() {
 
   const heroContent = [
     {
-      image: "/src/assets/images/carousel-1.jpg",
+      image: "/images/carousel-1.jpg",
       title: t("hero.0.title"),
       subtitle: t("hero.0.subtitle"),
     },
     {
-      image: "/src/assets/images/carousel-2.jpg",
+      image: "/images/carousel-2.jpg",
       title: t("hero.1.title"),
       subtitle: t("hero.1.subtitle"),
     },
     {
-      image: "/src/assets/images/carousel-3.jpg",
+      image: "/images/carousel-3.jpg",
       title: t("hero.2.title"),
       subtitle: t("hero.2.subtitle"),
     },

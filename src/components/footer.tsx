@@ -24,7 +24,7 @@ export default function Footer() {
           {/* Company Info Section */}
           <div className="flex-1">
             <div className="mb-6 flex items-center">
-              <img src="/src/assets/images/logo.webp" alt="logo" />
+              <img src="/images/logo.webp" alt="logo" />
             </div>
             <p className="mb-6 text-justify text-sm leading-relaxed">
               {t("footer.company_info")}
@@ -137,7 +137,7 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder={t("footer.newsletter.placeholder")}
-                  className="w-full rounded-none border border-gray-700 bg-transparent bg-white px-4 py-6 text-gray-700 focus:border-orange-500 focus:outline-hidden"
+                  className="w-full rounded-none border border-gray-700 bg-white px-4 py-6 text-gray-700 focus:border-orange-500 focus:outline-hidden"
                 />
                 <button className="bg-orange-500 px-6 py-6 text-nowrap text-white hover:bg-orange-600">
                   {t("footer.newsletter.signup")}

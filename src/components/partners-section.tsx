@@ -5,32 +5,32 @@ import { useTranslation } from "react-i18next";
 const partners = [
   {
     name: "Johnson Controls",
-    img: "/src/assets/images/johnson-controls-logo.webp",
+    img: "/images/johnson-controls-logo.webp",
     url: "https://me.johnsoncontrols.com/",
   },
   {
     name: "Daikin",
-    img: "/src/assets/images/daikin-logo.webp",
+    img: "/images/daikin-logo.webp",
     url: "https://www.daikinmea.com/",
   },
   {
     name: "Carrier",
-    img: "/src/assets/images/carrier-logo.webp",
+    img: "/images/carrier-logo.webp",
     url: "https://www.carrier.com/commercial/en/ae/",
   },
   {
     name: "Zamil",
-    img: "/src/assets/images/zamil-ac-logo.webp",
+    img: "/images/zamil-ac-logo.webp",
     url: "https://zamilac.com/",
   },
   {
     name: "Trane",
-    img: "/src/assets/images/trane-logo.webp",
+    img: "/images/trane-logo.webp",
     url: "https://www.trane.com/commercial/middle-east/sa/en.html",
   },
   {
     name: "Gree",
-    img: "/src/assets/images/gree-logo.png",
+    img: "/images/gree-logo.png",
     url: "https://global.gree.com/",
   },
 ];

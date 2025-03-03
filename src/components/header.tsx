@@ -125,7 +125,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <div className="hidden items-center justify-between md:flex">
           <div className="w-40 lg:w-52">
-            <img src="src/assets/images/logo.webp" alt="Logo" />
+            <img src="/images/logo.webp" alt="Logo" />
           </div>
 
           <div className="flex items-center gap-8 md:text-xs lg:text-lg">
@@ -183,7 +183,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         <div className="flex items-center justify-between md:hidden">
           <div className="w-52">
-            <img src="src/assets/images/logo.webp" alt="Logo" />
+            <img src="/images/logo.webp" alt="Logo" />
           </div>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -200,7 +200,7 @@ export default function Header() {
               <SheetHeader>
                 <div className="flex h-32 items-center justify-center">
                   <div className="w-56">
-                    <img src="src/assets/images/logo.webp" alt="Logo" />
+                    <img src="/images/logo.webp" alt="Logo" />
                   </div>
                 </div>
               </SheetHeader>
